@@ -1,0 +1,145 @@
+* [33mcommit 51f3a1d10542cb5f0f22d34a91fca5ece2499eba[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+[31m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[31m|[m Date:   Sun Feb 22 03:35:25 2026 +0100
+[31m|[m 
+[31m|[m     salut
+[31m|[m 
+* [33mcommit 1d58111d633973f5efd541afe23635c029506b09[m
+[31m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[31m|[m Date:   Sun Feb 22 03:32:04 2026 +0100
+[31m|[m 
+[31m|[m     salut
+[31m|[m 
+* [33mcommit 929e95118daa32a800669f01406d4a67df31ad44[m
+[31m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[31m|[m Date:   Sun Feb 22 03:19:03 2026 +0100
+[31m|[m 
+[31m|[m     salut
+[31m|[m 
+* [33mcommit a43b70438d487e497250d63c6e9acc50fdcf36eb[m
+[31m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[31m|[m Date:   Sun Feb 22 03:16:01 2026 +0100
+[31m|[m 
+[31m|[m     salut
+[31m|[m 
+* [33mcommit 906628d0d27d0933c1f2f66064c55b27579198e5[m
+[31m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[31m|[m Date:   Sun Feb 22 03:05:57 2026 +0100
+[31m|[m 
+[31m|[m     salut
+[31m|[m 
+* [33mcommit a462cfe605ea879c3586c70430ddfe847e367376[m
+[31m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[31m|[m Date:   Sun Feb 22 02:52:32 2026 +0100
+[31m|[m 
+[31m|[m     salut
+[31m|[m 
+* [33mcommit 23e8e1f8d1abc1032a1b81f31ea715ef00b8eb69[m
+[31m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[31m|[m Date:   Sun Feb 22 02:26:38 2026 +0100
+[31m|[m 
+[31m|[m     salut
+[31m|[m 
+* [33mcommit 47d804fc87b4ea4fc1c4bef280a0de8de5c9853a[m
+[31m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[31m|[m Date:   Sun Feb 22 02:25:20 2026 +0100
+[31m|[m 
+[31m|[m     salut
+[31m|[m   
+*   [33mcommit c91a9359fe214ae21fdf74441ef0f3d7337cbe5c[m
+[32m|[m[33m\[m  Merge: 9da91b0 a211372
+[32m|[m [33m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[32m|[m [33m|[m Date:   Sun Feb 22 02:24:14 2026 +0100
+[32m|[m [33m|[m 
+[32m|[m [33m|[m     salut
+[32m|[m [33m|[m 
+[32m|[m * [33mcommit a2113721483dd852180bf7bcca89c343e6dcc5b2[m
+[32m|[m [33m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[32m|[m [33m|[m Date:   Sun Feb 22 02:17:45 2026 +0100
+[32m|[m [33m|[m 
+[32m|[m [33m|[m     Update README.md
+[32m|[m [33m|[m 
+* [33m|[m [33mcommit 9da91b0295a996266e26585555a6dc87dd50c9c9[m
+[33m|[m[33m/[m  Author: Dieudonne Bahati <didopro2027@gmail.com>
+[33m|[m   Date:   Sun Feb 22 02:20:11 2026 +0100
+[33m|[m   
+[33m|[m       ss
+[33m|[m   
+*   [33mcommit 61e7a322bf322b4a983e67f4c2c6baf85edd603b[m
+[34m|[m[35m\[m  Merge: 13f0451 04a2ef8
+[34m|[m [35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[34m|[m [35m|[m Date:   Sun Feb 22 02:16:10 2026 +0100
+[34m|[m [35m|[m 
+[34m|[m [35m|[m     Rename
+[34m|[m [35m|[m 
+[34m|[m * [33mcommit 04a2ef8f37d583dae836ea599dee683a0efcc361[m
+[34m|[m [35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[34m|[m [35m|[m Date:   Sun Feb 22 01:44:15 2026 +0100
+[34m|[m [35m|[m 
+[34m|[m [35m|[m     Rename afia-ai.html to index.html
+[34m|[m [35m|[m 
+[34m|[m * [33mcommit 2987936fcbe07f401acaedfb8da61ff2de9e40d1[m
+[34m|[m [35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[34m|[m [35m|[m Date:   Sun Feb 22 01:40:34 2026 +0100
+[34m|[m [35m|[m 
+[34m|[m [35m|[m     Rename afiai_landing_page.html to afia-ai.html
+[34m|[m [35m|[m 
+[34m|[m * [33mcommit 34267012062710ab3e29c5859c499f409d470df7[m
+[34m|[m [35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[34m|[m [35m|[m Date:   Sun Feb 22 01:34:47 2026 +0100
+[34m|[m [35m|[m 
+[34m|[m [35m|[m     Delete CNAME
+[34m|[m [35m|[m 
+[34m|[m * [33mcommit d94f407ed78bf32529c98c370e63d26ec329efe0[m
+[34m|[m [35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[34m|[m [35m|[m Date:   Sun Feb 22 01:32:13 2026 +0100
+[34m|[m [35m|[m 
+[34m|[m [35m|[m     Update CNAME
+[34m|[m [35m|[m 
+[34m|[m * [33mcommit bdf6498a447a12583cc2965162be1501d07d201f[m
+[34m|[m [35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[34m|[m [35m|[m Date:   Sun Feb 22 01:29:30 2026 +0100
+[34m|[m [35m|[m 
+[34m|[m [35m|[m     Update CNAME
+[34m|[m [35m|[m 
+[34m|[m * [33mcommit 89ec6bd00243fdc87050aa0410f7bb0fbb8eefa1[m
+[34m|[m [35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[34m|[m [35m|[m Date:   Sun Feb 22 01:25:06 2026 +0100
+[34m|[m [35m|[m 
+[34m|[m [35m|[m     Create CNAME
+[34m|[m [35m|[m 
+[34m|[m * [33mcommit ebdfb6fb379f54cc34c5409f84dead632e7329fb[m
+[34m|[m [35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[34m|[m [35m|[m Date:   Sun Feb 22 01:20:49 2026 +0100
+[34m|[m [35m|[m 
+[34m|[m [35m|[m     Delete CNAME
+[34m|[m [35m|[m 
+[34m|[m * [33mcommit d0ede8426dd68fa6f4c7d47cd1ba5bcca682acb3[m
+[34m|[m [35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[34m|[m [35m|[m Date:   Sun Feb 22 01:20:19 2026 +0100
+[34m|[m [35m|[m 
+[34m|[m [35m|[m     Create CNAME
+[34m|[m [35m|[m 
+* [35m|[m [33mcommit 13f04518fe2e840f4670998779da5931f6bf70b2[m
+[35m|[m [35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[35m|[m [35m|[m Date:   Sun Feb 22 02:09:24 2026 +0100
+[35m|[m [35m|[m 
+[35m|[m [35m|[m     hh
+[35m|[m [35m|[m 
+* [35m|[m [33mcommit c3dda0f6193787c2843a54d9453528771aaa959f[m
+[35m|[m[35m/[m  Author: Dieudonne Bahati <didopro2027@gmail.com>
+[35m|[m   Date:   Sun Feb 22 01:37:47 2026 +0100
+[35m|[m   
+[35m|[m       Site web code
+[35m|[m 
+* [33mcommit 13c85eda98175c8aec97bf1b2af8a3b9e84fd5d1[m
+[35m|[m Author: Dieudonne Bahati <didopro2027@gmail.com>
+[35m|[m Date:   Sun Feb 22 01:16:40 2026 +0100
+[35m|[m 
+[35m|[m     Site web code
+[35m|[m 
+* [33mcommit 434278dc23529a2e1d7a6cbf4ce2bb17de52c8b3[m
+  Author: Dieudonne Bahati <didopro2027@gmail.com>
+  Date:   Sun Feb 22 01:14:10 2026 +0100
+  
+      first commit
