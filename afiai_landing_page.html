@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFIA-AI - AI-Powered Healthcare Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo i {
+            font-size: 32px;
+            color: #60a5fa;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 180px 5% 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, transparent 70%);
+            top: -250px;
+            right: -250px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 24px;
+            animation: fadeInUp 1s ease-out;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #1e3a8a;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 17px;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #fbbf24;
+            color: #1a1a1a;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-top: 30px;
+            animation: pulse 2s infinite;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Container */
+        section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 42px;
+            color: #1e3a8a;
+            margin-bottom: 24px;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        section p {
+            font-size: 18px;
+            color: #000000;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8fafc;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .about-text {
+            text-align: left;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 20px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .about-image i {
+            font-size: 120px;
+            opacity: 0.3;
+        }
+
+        /* Features Section */
+        .features {
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 45px 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #3b82f6;
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 52px;
+            margin-bottom: 24px;
+            color: #3b82f6;
+        }
+
+        .feature-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 16px;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            background: #f8fafc;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .screenshot-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .screenshot-placeholder i {
+            font-size: 80px;
+            opacity: 0.4;
+        }
+
+        .screenshot-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .screenshot-caption {
+            padding: 24px;
+            text-align: center;
+            color: #1e3a8a;
+            font-weight: 600;
+            font-size: 17px;
+        }
+
+        /* Developer Section */
+        .developer {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .developer h2 {
+            color: white;
+        }
+
+        .developer-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 50px;
+            margin: 50px auto 0;
+            max-width: 700px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        }
+
+        .developer-avatar {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            color: #3b82f6;
+        }
+
+        .developer-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .developer-name {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .developer-title {
+            font-size: 19px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .developer-bio {
+            font-size: 17px;
+            line-height: 1.9;
+            opacity: 0.95;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 28px;
+            transition: all 0.3s;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.15);
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Technology Stack */
+        .tech-stack {
+            background: white;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 35px 25px;
+            background: #f8fafc;
+            border-radius: 15px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .tech-item:hover {
+            background: #1e3a8a;
+            color: white;
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .tech-item-icon {
+            font-size: 52px;
+            margin-bottom: 18px;
+            color: #3b82f6;
+        }
+
+        .tech-item:hover .tech-item-icon {
+            color: #60a5fa;
+        }
+
+        .tech-item-name {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 700px;
+            margin: 50px auto 0;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 28px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            font-size: 36px;
+            color: #3b82f6;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eff6ff;
+            border-radius: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 40px 5%;
+        }
+
+        footer p {
+            color: #9ca3af;
+            font-size: 15px;
+            margin: 8px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            section h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                AFIAI
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#screenshots">Preview</a></li>
+                <li><a href="#developer">Developer</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>AFIA-AI - AI-Powered Healthcare Management</h1>
+        <p>An intelligent healthcare management system powered by artificial intelligence to revolutionize medical care and patient management</p>
+        <a href="#about" class="cta-button">Discover the Project</a>
+        <div class="status-badge"><i class="fas fa-code"></i> UNDER ACTIVE DEVELOPMENT</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in" id="about">
+        <h2>About the Project</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    <strong>AFIA-AI (AI For Integrated Healthcare)</strong> is an innovative healthcare management system that uses artificial intelligence to improve the quality of medical care and optimize patient management.
+                </p>
+                <p>
+                    The project integrates cutting-edge technologies such as predictive analytics, automated medical data processing, and intelligent recommendations based on patient history.
+                </p>
+                <p>
+                    Our goal is to create a comprehensive solution that helps healthcare professionals make better decisions, save time, and provide personalized care to each patient.
+                </p>
+            </div>
+            <div class="about-image">
+                <!-- Replace with your image -->
+                <!-- <img src="" alt="AFIAI Dashboard"> -->
+                <i class="fas fa-hospital"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features fade-in" id="features">
+        <h2>Core Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                <h3>AI Analysis</h3>
+                <p>Intelligent analysis of medical data with personalized recommendations using Claude API</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h3>Patient Management</h3>
+                <p>Complete patient record management system with detailed medical history</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+                <h3>Appointments</h3>
+                <p>Appointment scheduling and tracking with automatic email notifications</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-file-pdf"></i></div>
+                <h3>PDF Export</h3>
+                <p>Automatic generation of professional medical reports in PDF format</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Dashboards</h3>
+                <p>Advanced visualizations with interactive charts for statistics tracking</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-folder-open"></i></div>
+                <h3>Document Management</h3>
+                <p>Upload and secure storage of medical documents per patient</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-history"></i></div>
+                <h3>Complete History</h3>
+                <p>Full traceability of all actions with precise timestamps</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Security</h3>
+                <p>Secure authentication and protection of sensitive data</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots fade-in" id="screenshots">
+        <h2>Application Preview</h2>
+        <p style="text-align: center; color: #6b7280; max-width: 700px; margin: 0 auto;">Discover the modern and intuitive interface of AFIAI</p>
+        <div class="screenshots-grid">
+            <div class="screenshot-item">
+                <div class="screenshot-placeholder">
+                    <!-- Replace with your screenshot 1 -->
+                    <!-- <img src="screenshot-1.jpg" alt="Dashboard"> -->
+                    <i class="fas fa-chart-pie"></i>
+                    <p>Main Dashboard</p>
+                </div>
+                <div class="screenshot-caption">Dashboard with real-time statistics</div>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-placeholder">
+                    <!-- Replace with your screenshot 2 -->
+                    <!-- <img src="screenshot-2.jpg" alt="Patient Management"> -->
+                    <i class="fas fa-user-injured"></i>
+                    <p>Patient Management</p>
+                </div>
+                <div class="screenshot-caption">Patient management interface</div>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-placeholder">
+                    <!-- Replace with your screenshot 3 -->
+                    <!-- <img src="screenshot-3.jpg" alt="AI Analysis"> -->
+                    <i class="fas fa-robot"></i>
+                    <p>AI Analysis</p>
+                </div>
+                <div class="screenshot-caption">Intelligent analysis with Claude AI</div>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-placeholder">
+                    <!-- Replace with your screenshot 4 -->
+                    <!-- <img src="screenshot-4.jpg" alt="Medical Records"> -->
+                    <i class="fas fa-file-medical"></i>
+                    <p>Medical Records</p>
+                </div>
+                <div class="screenshot-caption">Complete medical records management</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="tech-stack fade-in">
+        <h2>Technology Stack</h2>
+        <div class="tech-grid">
+            <div class="tech-item">
+                <div class="tech-item-icon"><i class="fab fa-python"></i></div>
+                <div class="tech-item-name">Python</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-item-icon"><i class="fas fa-flask"></i></div>
+                <div class="tech-item-name">Flask</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-item-icon"><i class="fas fa-database"></i></div>
+                <div class="tech-item-name">SQL Server</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-item-icon"><i class="fas fa-brain"></i></div>
+                <div class="tech-item-name">Claude AI</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-item-icon"><i class="fas fa-chart-bar"></i></div>
+                <div class="tech-item-name">Chart.js</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-item-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="tech-item-name">ReportLab</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section class="developer fade-in" id="developer">
+        <h2>The Developer</h2>
+        <div class="developer-card">
+            <div class="developer-avatar">
+                <!-- Replace with your photo -->
+                <img src="pictures/retouch_2024100415094280.jpg" alt="Dieudonne BAHATI">
+            </div>
+            <div class="developer-name">Dieudonné BAHATI</div>
+            <div class="developer-title">Computer Science Student | Data & Systems Engineer</div>
+            <div class="developer-bio">
+                Passionate about computer science with a special interest in data science and systems engineering. 
+                I am developing AFIA-AI as part of my Computer Science studies with the goal of creating 
+                innovative technological solutions that can have a real impact in the healthcare field.
+                <br><br>
+                My expertise focuses on developing intelligent systems, data analysis, 
+                and robust software architecture.
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/dieudonne-ai" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/dieudonne-bahati" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:didopro2027@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in" id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <p>Interested in the AFIAI project? Feel free to contact me for more information, collaborations, or suggestions.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div style="text-align: left;">
+                        <strong>Email</strong><br>
+                        contact@afiai.com
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <div style="text-align: left;">
+                        <strong>LinkedIn</strong><br>
+                        linkedin.com/in/dieudonne-bahati
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <div style="text-align: left;">
+                        <strong>GitHub</strong><br>
+                        github.com/dieudonne-ai
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 AFIAI - AI-Powered Healthcare Management System</p>
+        <p>Developed by Dieudonné BAHATI | Project under active development</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
